@@ -2,13 +2,15 @@ bintrayReleaseOnPublish in ThisBuild := false
 
 organization := "org.sedis"
 name := "sedis"
-crossScalaVersions := Seq("2.10.6", "2.11.8")
+crossScalaVersions := Seq("2.10.6", "2.11.8", "2.12.2")
 licenses += ("MIT", url("https://spdx.org/licenses/MIT"))
+
+isSnapshot := true
 
 
 libraryDependencies ++= Seq(
-  "redis.clients" %  "jedis"      % "2.4.2",
-  "org.scalatest" %% "scalatest"  % "2.2.0" % "test"
+  "redis.clients" %  "jedis"      % "2.9.0",
+  "org.scalatest" %% "scalatest"  % "3.0.4" % "test"
 )
 
 publishArtifact in Test := false
